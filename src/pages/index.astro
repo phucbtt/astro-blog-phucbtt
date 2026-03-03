@@ -14,11 +14,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<Header />
 
 		<main class="container">
+			<!-- HERO -->
 			<section class="hero">
-				<h1>Hi, I'm Phuc</h1>
+				<h1>Phuc Bui</h1>
 				<p class="subtitle">
-					IT Helpdesk Professional focused on system reliability,
-					user support, and continuous improvement.
+					IT Helpdesk | IT Infrastructure | Technical Support
+				</p>
+				<p class="intro">
+					IT professional based in Hanoi with hands-on experience in helpdesk
+					support, infrastructure operations, and system troubleshooting.
+					Focused on maintaining stable IT environments and improving
+					operational efficiency.
 				</p>
 
 				<div class="cta">
@@ -27,24 +33,74 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</section>
 
-			<section class="about-preview">
-				<h2>Professional Focus</h2>
-				<p>
-					I specialize in troubleshooting, system stability, and operational efficiency.
-					My goal is to reduce downtime, improve workflows, and contribute to a
-					more reliable IT infrastructure.
-				</p>
+			<!-- EXPERIENCE -->
+			<section class="experience">
+				<h2>Professional Experience</h2>
+
+				<div class="job">
+					<h3>IT Infrastructure Engineer</h3>
+					<p class="company">
+						SanAn Corporation Vietnam · Jan 2026 – Mar 2026
+					</p>
+					<p>
+						Supported IT infrastructure operations, system monitoring,
+						and ensured stability across internal technical environments.
+					</p>
+				</div>
+
+				<div class="job">
+					<h3>IT Helpdesk</h3>
+					<p class="company">
+						SanAn Corporation Vietnam · Feb 2025 – Feb 2026
+					</p>
+					<p>
+						Provided technical support for end users, resolved hardware
+						and software issues, managed user accounts, and maintained
+						system reliability.
+					</p>
+				</div>
+
+				<div class="job">
+					<h3>IT Technical Support</h3>
+					<p class="company">
+						Cao đẳng Công thương Việt Nam · Feb 2024 – Jul 2024
+					</p>
+					<p>
+						Handled on-site technical support, device configuration,
+						and network troubleshooting within educational environments.
+					</p>
+				</div>
 			</section>
 
+			<!-- SKILLS -->
 			<section class="skills">
 				<h2>Core Skills</h2>
-				<ul>
-					<li>Windows Administration</li>
-					<li>Technical Troubleshooting</li>
-					<li>Networking Fundamentals</li>
-					<li>PowerShell / Bash (Learning)</li>
-					<li>User & Access Management</li>
-				</ul>
+
+				<div class="skills-grid">
+					<div class="skill-card">System Monitoring</div>
+					<div class="skill-card">Technical Troubleshooting</div>
+					<div class="skill-card">Linux</div>
+					<div class="skill-card">Windows Administration</div>
+					<div class="skill-card">User & Access Management</div>
+					<div class="skill-card">Networking Fundamentals</div>
+				</div>
+			</section>
+
+			<!-- CERTIFICATION -->
+			<section class="certification">
+				<h2>Certification</h2>
+				<p class="cert-card">OCNA – Oracle Certified Network Associate</p>
+			</section>
+
+			<!-- EDUCATION -->
+			<section class="education">
+				<h2>Education</h2>
+				<div class="edu-item">
+					Bachelor of Information Technology – University of Transport Technology (2025)
+				</div>
+				<div class="edu-item">
+					Associate Degree in Computer Science – Cao đẳng Công thương Việt Nam (2021–2023)
+				</div>
 			</section>
 		</main>
 
@@ -54,23 +110,36 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <style>
 	.container {
-		max-width: 900px;
+		max-width: 1000px;
 		margin: auto;
 		padding: 2rem 1.5rem;
 	}
 
+	section {
+		margin-top: 4rem;
+	}
+
+	/* HERO */
 	.hero {
 		text-align: center;
-		padding: 4rem 0;
+		margin-top: 3rem;
 	}
 
 	.hero h1 {
-		font-size: 2.8rem;
-		margin-bottom: 1rem;
+		font-size: 3rem;
+		margin-bottom: 0.5rem;
 	}
 
 	.subtitle {
 		font-size: 1.2rem;
+		color: var(--accent);
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+
+	.intro {
+		max-width: 650px;
+		margin: auto;
 		color: #555;
 		margin-bottom: 2rem;
 	}
@@ -84,27 +153,74 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.primary-btn {
 		background: var(--accent);
 		color: white;
-		padding: 0.8rem 1.5rem;
+		padding: 0.8rem 1.6rem;
 		border-radius: 6px;
 		text-decoration: none;
+		font-weight: 500;
 	}
 
 	.secondary-btn {
 		border: 1px solid var(--accent);
-		padding: 0.8rem 1.5rem;
+		padding: 0.8rem 1.6rem;
 		border-radius: 6px;
 		text-decoration: none;
 		color: var(--accent);
+		font-weight: 500;
 	}
 
-	section {
-		margin-top: 3rem;
+	/* EXPERIENCE */
+	.job {
+		margin-top: 1.5rem;
+		padding: 1.2rem;
+		border-left: 4px solid var(--accent);
+		background: #f9fafc;
+		border-radius: 8px;
 	}
 
-	.skills ul {
+	.company {
+		font-size: 0.9rem;
+		color: #555;
+		margin-bottom: 0.5rem;
+	}
+
+	/* SKILLS */
+	.skills-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 0.5rem;
-		padding-left: 1rem;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	.skill-card {
+		padding: 1rem;
+		border-radius: 10px;
+		background: #f4f6f9;
+		border: 1px solid #e0e6ed;
+		font-weight: 500;
+		transition: 0.2s ease;
+	}
+
+	.skill-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+		border-color: var(--accent);
+	}
+
+	/* CERTIFICATION */
+	.cert-card {
+		margin-top: 1rem;
+		padding: 1rem;
+		background: #eef3ff;
+		border-left: 4px solid var(--accent);
+		border-radius: 8px;
+		font-weight: 500;
+	}
+
+	/* EDUCATION */
+	.edu-item {
+		margin-top: 1rem;
+		padding: 0.8rem 1rem;
+		background: #f9fafc;
+		border-radius: 6px;
 	}
 </style>
