@@ -206,3 +206,63 @@ table td {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+/* ================= DARK MODE (GLOBAL) ================= */
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --accent: #22c55e;
+    --accent-dark: #16a34a;
+
+    --black: 248, 250, 252;       /* Light text */
+    --gray: 148, 163, 184;        /* Muted slate */
+    --gray-light: 30, 41, 59;     /* Card background */
+    --gray-dark: 226, 232, 240;   /* Main text */
+
+    --gray-gradient: rgba(15, 23, 42, 1), #0f172a;
+
+    --box-shadow:
+      0 2px 6px rgba(34, 197, 94, 0.15),
+      0 8px 24px rgba(34, 197, 94, 0.15),
+      0 16px 32px rgba(34, 197, 94, 0.12);
+  }
+
+  body {
+    background: linear-gradient(var(--gray-gradient)) no-repeat;
+    background-size: 100% 600px;
+    color: rgb(var(--gray-dark));
+  }
+
+  a {
+    color: var(--accent);
+  }
+
+  a:hover {
+    color: var(--accent-dark);
+  }
+
+  code {
+    background-color: rgb(30, 41, 59);
+    color: #e2e8f0;
+  }
+
+  pre {
+    background: #020617;
+    color: #f1f5f9;
+  }
+
+  blockquote {
+    color: rgb(var(--gray));
+  }
+
+  hr {
+    border-top: 1px solid rgb(51, 65, 85);
+  }
+
+  table th,
+  table td {
+    border-bottom: 1px solid rgb(51, 65, 85);
+  }
+
+}
