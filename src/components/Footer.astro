@@ -12,23 +12,28 @@ const today = new Date();
       GitHub
     </a>
 
-    <a href="https://www.linkedin.com/in/bttp/" target="_blank" aria-label="LinkedIn">
+    <a
+      href="https://www.linkedin.com/in/bttp/"
+      target="_blank"
+      aria-label="LinkedIn"
+    >
       LinkedIn
     </a>
 
-    <a href="mailto:bt.thanhphuc@gmail.com" aria-label="Email">
-      Email
-    </a>
+    <a href="mailto:bt.thanhphuc@gmail.com" aria-label="Email"> Email </a>
   </div>
 </footer>
 
 <style>
   footer {
     padding: 2.5em 1em;
-    background: #f8fafc;
-    color: #6b7280;
+    background: var(--bg-soft);
+    color: rgb(var(--gray));
     text-align: center;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid rgb(var(--border-color));
+    transition:
+      background 0.3s ease,
+      color 0.3s ease;
   }
 
   footer p {
@@ -46,11 +51,11 @@ const today = new Date();
 
   .social-links a {
     text-decoration: none;
-    color: #6b7280;
+    color: rgb(var(--gray));
     transition: color 0.2s ease;
   }
 
   .social-links a:hover {
-    color: #111827;
+    color: var(--accent);
   }
 </style>
