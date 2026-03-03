@@ -1,253 +1,288 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
 
-		<main class="container">
-			<!-- HERO -->
-			<section class="hero">
-				<h1>Phuc Bui</h1>
-				<p class="subtitle">
-					IT Helpdesk | IT Infrastructure | Technical Support
-				</p>
-				<p class="intro">
-					IT professional based in Hanoi with hands-on experience in helpdesk
-					support, infrastructure operations, and system troubleshooting.
-					Focused on maintaining stable IT environments and improving
-					operational efficiency.
-				</p>
+    <main class="container">
+      <!-- HERO -->
+      <section class="hero">
+        <img src="/avatar.jpg" alt="Phuc Bui" class="avatar" />
+        <h1>Phuc Bui</h1>
+        <p class="subtitle">
+          IT Helpdesk | IT Infrastructure | Technical Support
+        </p>
+        <p class="intro">
+          IT professional based in Hanoi with hands-on experience in helpdesk
+          support, infrastructure operations, and system troubleshooting.
+          Focused on maintaining stable IT environments and improving
+          operational efficiency.
+        </p>
 
-				<div class="cta">
-					<a href="/about" class="primary-btn">About Me</a>
-					<a href="/blog" class="secondary-btn">Read Blog</a>
-				</div>
-			</section>
+        <div class="cta">
+          <a href="/about" class="primary-btn">About Me</a>
+          <a href="/blog" class="secondary-btn">Read Blog</a>
+        </div>
+      </section>
 
-			<!-- EXPERIENCE -->
-			<section class="experience">
-				<h2>Professional Experience</h2>
+      <!-- EXPERIENCE -->
+      <section class="experience">
+        <h2>Professional Experience</h2>
 
-				<div class="job">
-					<h3>IT Infrastructure Engineer</h3>
-					<p class="company">
-						SanAn Corporation Vietnam · Jan 2026 – Mar 2026
-					</p>
-					<p>
-						Supported IT infrastructure operations, system monitoring,
-						and ensured stability across internal technical environments.
-					</p>
-				</div>
+        <div class="job">
+          <h3>IT Infrastructure Engineer</h3>
+          <p class="company">SanAn Corporation Vietnam · Jan 2026 – Mar 2026</p>
+          <p>
+            Supported IT infrastructure operations, system monitoring, and
+            ensured stability across internal technical environments.
+          </p>
+        </div>
 
-				<div class="job">
-					<h3>IT Helpdesk</h3>
-					<p class="company">
-						SanAn Corporation Vietnam · Feb 2025 – Feb 2026
-					</p>
-					<p>
-						Provided technical support for end users, resolved hardware
-						and software issues, managed user accounts, and maintained
-						system reliability.
-					</p>
-				</div>
+        <div class="job">
+          <h3>IT Helpdesk</h3>
+          <p class="company">SanAn Corporation Vietnam · Feb 2025 – Feb 2026</p>
+          <p>
+            Provided technical support for end users, resolved hardware and
+            software issues, managed user accounts, and maintained system
+            reliability.
+          </p>
+        </div>
 
-				<div class="job">
-					<h3>IT Technical Support</h3>
-					<p class="company">
-						Cao đẳng Công thương Việt Nam · Feb 2024 – Jul 2024
-					</p>
-					<p>
-						Handled on-site technical support, device configuration,
-						and network troubleshooting within educational environments.
-					</p>
-				</div>
-			</section>
+        <div class="job">
+          <h3>IT Technical Support</h3>
+          <p class="company">
+            Cao đẳng Công thương Việt Nam · Feb 2024 – Jul 2024
+          </p>
+          <p>
+            Handled on-site technical support, device configuration, and network
+            troubleshooting within educational environments.
+          </p>
+        </div>
+      </section>
 
-			<!-- SKILLS -->
-			<section class="skills">
-				<h2>Core Skills</h2>
-				<div class="skills-grid">
-					<div class="skill-card">System Monitoring</div>
-					<div class="skill-card">Technical Troubleshooting</div>
-					<div class="skill-card">Linux</div>
-					<div class="skill-card">Windows Administration</div>
-					<div class="skill-card">User & Access Management</div>
-					<div class="skill-card">Networking Fundamentals</div>
-				</div>
-			</section>
+      <!-- SKILLS -->
+      <section class="skills">
+        <h2>Core Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">System Monitoring</div>
+          <div class="skill-card">Technical Troubleshooting</div>
+          <div class="skill-card">Linux</div>
+          <div class="skill-card">Windows Administration</div>
+          <div class="skill-card">User & Access Management</div>
+          <div class="skill-card">Networking Fundamentals</div>
+        </div>
+      </section>
 
-			<!-- CERTIFICATION -->
-			<section class="certification">
-				<h2>Certification</h2>
-				<p class="cert-card">OCNA – Oracle Certified Network Associate</p>
-			</section>
+      <!-- CERTIFICATION -->
+      <section class="certification">
+        <h2>Certification</h2>
+        <p class="cert-card">OCNA – Oracle Certified Network Associate</p>
+      </section>
 
-			<!-- EDUCATION -->
-			<section class="education">
-				<h2>Education</h2>
-				<div class="edu-item">
-					Bachelor of Information Technology – University of Transport Technology (2025)
-				</div>
-				<div class="edu-item">
-					Associate Degree in Computer Science – Cao đẳng Công thương Việt Nam (2021–2023)
-				</div>
-			</section>
-		</main>
+      <!-- EDUCATION -->
+      <section class="education">
+        <h2>Education</h2>
+        <div class="edu-item">
+          Bachelor of Information Technology – University of Transport
+          Technology (2025)
+        </div>
+        <div class="edu-item">
+          Associate Degree in Computer Science – Cao đẳng Công thương Việt Nam
+          (2021–2023)
+        </div>
+      </section>
+    </main>
 
-		<Footer />
-	</body>
+    <Footer />
+  </body>
 </html>
 
 <style>
-	.container {
-		max-width: 1000px;
-		margin: auto;
-		padding: 2rem 1.5rem;
-	}
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2.5rem 1.5rem;
+  }
 
-	section {
-		margin-top: 4rem;
-	}
+  section {
+    margin-top: 4.5rem;
+  }
 
-	/* HERO */
-	.hero {
-		text-align: center;
-		margin-top: 3rem;
-	}
+  /* ================= HERO ================= */
 
-	.hero h1 {
-		font-size: 3rem;
-		margin-bottom: 0.5rem;
-	}
+  .hero {
+    text-align: center;
+    margin-top: 3.5rem;
+  }
 
-	.subtitle {
-		font-size: 1.2rem;
-		color: var(--accent);
-		font-weight: 600;
-		margin-bottom: 1rem;
-	}
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent);
+    box-shadow: 0 10px 30px rgba(22, 101, 52, 0.2);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+  }
 
-	.intro {
-		max-width: 650px;
-		margin: auto;
-		color: #555;
-		margin-bottom: 2rem;
-	}
+  .avatar:hover {
+    transform: scale(1.05);
+  }
 
-	.cta {
-		display: flex;
-		justify-content: center;
-		gap: 1rem;
-	}
+  .hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+  }
 
-	.primary-btn {
-		background: var(--accent);
-		color: white;
-		padding: 0.8rem 1.6rem;
-		border-radius: 6px;
-		text-decoration: none;
-		font-weight: 500;
-	}
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
 
-	.secondary-btn {
-		border: 1px solid var(--accent);
-		padding: 0.8rem 1.6rem;
-		border-radius: 6px;
-		text-decoration: none;
-		color: var(--accent);
-		font-weight: 500;
-	}
+  .intro {
+    max-width: 650px;
+    margin: auto;
+    color: rgb(var(--gray));
+    margin-bottom: 2.2rem;
+  }
 
-	/* EXPERIENCE */
-	.job {
-		margin-top: 1.5rem;
-		padding: 1.2rem;
-		border-left: 4px solid var(--accent);
-		background: #f9fafc;
-		border-radius: 8px;
-	}
+  .cta {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+  }
 
-	.company {
-		font-size: 0.9rem;
-		color: #555;
-		margin-bottom: 0.5rem;
-	}
+  .primary-btn {
+    background: var(--accent);
+    color: white;
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
 
-	/* SKILLS */
-	.skills-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-		gap: 1rem;
-		margin-top: 1.5rem;
-	}
+  .primary-btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+  }
 
-	.skill-card {
-		padding: 1rem;
-		border-radius: 10px;
-		background: #f4f6f9;
-		border: 1px solid #e0e6ed;
-		font-weight: 500;
-		transition: 0.2s ease;
-	}
+  .secondary-btn {
+    border: 2px solid var(--accent);
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
 
-	.skill-card:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-		border-color: var(--accent);
-	}
+  .secondary-btn:hover {
+    background: var(--accent);
+    color: white;
+  }
 
-	/* CERTIFICATION */
-	.cert-card {
-		margin-top: 1rem;
-		padding: 1rem;
-		background: #eef3ff;
-		border-left: 4px solid var(--accent);
-		border-radius: 8px;
-		font-weight: 500;
-	}
+  /* ================= EXPERIENCE ================= */
 
-	/* EDUCATION */
-	.edu-item {
-		margin-top: 1rem;
-		padding: 0.8rem 1rem;
-		background: #f9fafc;
-		border-radius: 6px;
-	}
-	.skills {
-		margin-top: 3rem;
-	}
+  .job {
+    margin-top: 1.8rem;
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent);
+    background: #f0fdf4;
+    border-radius: 12px;
+    transition: 0.25s ease;
+  }
 
-	.skills-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-		gap: 1.2rem;
-		margin-top: 1.5rem;
-	}
+  .job:hover {
+    box-shadow: 0 12px 28px rgba(22, 101, 52, 0.12);
+    transform: translateY(-3px);
+  }
 
-	.skill-card {
-		background: #f3f4f6;
-		padding: 1.4rem;
-		border-radius: 12px;
-		text-align: center;
-		font-weight: 500;
-		min-height: 80px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		transition: all 0.2s ease;
-	}
+  .company {
+    font-size: 0.9rem;
+    color: rgb(var(--gray));
+    margin-bottom: 0.6rem;
+  }
 
-	.skill-card:hover {
-		background: #e5e7eb;
-		transform: translateY(-3px);
-	}
+  /* ================= SKILLS ================= */
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.3rem;
+    margin-top: 1.8rem;
+  }
+
+  .skill-card {
+    background: #ffffff;
+    padding: 1.4rem;
+    border-radius: 14px;
+    text-align: center;
+    font-weight: 600;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d1fae5;
+    transition: 0.25s ease;
+  }
+
+  .skill-card:hover {
+    background: #ecfdf5;
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(22, 101, 52, 0.15);
+  }
+
+  /* ================= CERTIFICATION ================= */
+
+  .cert-card {
+    margin-top: 1.2rem;
+    padding: 1.2rem;
+    background: #ecfdf5;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  /* ================= EDUCATION ================= */
+
+  .edu-item {
+    margin-top: 1.2rem;
+    padding: 1rem 1.2rem;
+    background: #f8fafc;
+    border-radius: 10px;
+    border-left: 3px solid var(--accent);
+  }
+
+  /* ================= RESPONSIVE ================= */
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.4rem;
+    }
+
+    .cta {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      width: 220px;
+      text-align: center;
+    }
+  }
 </style>
