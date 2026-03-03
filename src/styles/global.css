@@ -224,3 +224,20 @@ table td {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+/* ===== Global Typography ===== */
+
+article p {
+  text-align: justify;
+  line-height: 1.75;
+  hyphens: auto;
+}
+
+article li {
+  text-align: justify;
+}
+
+article ul,
+article ol {
+  padding-left: 1.2rem;
+}
