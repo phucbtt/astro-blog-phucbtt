@@ -140,37 +140,41 @@ import { SITE_TITLE } from "../consts";
     align-items: center;
   }
 
-  /* THEME BUTTON – FIXED SIZE */
+  /* THEME BUTTON – LARGE CIRCLE */
   #theme-toggle {
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
     border: 1px solid rgb(var(--border-color));
-    background: none;
-    cursor: pointer;
+    background: var(--bg-soft);
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    cursor: pointer;
     color: rgb(var(--black));
-    transition: all 0.2s ease;
+
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease;
   }
 
   #theme-toggle:hover {
-    background: var(--bg-soft);
-    transform: translateY(-1px);
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow);
   }
 
   #theme-toggle:active {
-    transform: scale(0.95);
+    transform: scale(0.9);
   }
 
-  /* ICON SIZE FIX */
-  .icon {
-    width: 26px;
-    height: 26px;
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
+  /* ICON */
+  #theme-toggle .icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
   }
 
   /* ICON SWITCH */
