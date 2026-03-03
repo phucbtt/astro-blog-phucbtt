@@ -30,7 +30,7 @@
 /* ================= DARK MODE ================= */
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root.dark {
     --accent: #22c55e;
     --accent-dark: #16a34a;
 
