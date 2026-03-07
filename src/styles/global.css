@@ -276,3 +276,14 @@ body {
 main {
   flex: 1;
 }
+
+article {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.prose {
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 1rem;
+}
