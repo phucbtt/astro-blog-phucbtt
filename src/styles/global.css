@@ -83,10 +83,41 @@ body {
 /* ================= LAYOUT ================= */
 
 main {
-  width: 720px;
-  max-width: calc(100% - 2em);
+  max-width: 760px;
+  width: 100%;
   margin: auto;
-  padding: 3em 1em;
+  padding: 3rem 1.5rem;
+}
+
+/* ================= WIDE CONTAINER (HOMEPAGE) ================= */
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* ================= GRID FIX ================= */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+article {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+article img {
+  margin: 2rem 0;
 }
 
 /* ================= HEADINGS ================= */
