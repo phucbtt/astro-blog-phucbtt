@@ -2,51 +2,44 @@
   Forest Tech Theme – Clean Global Version
 */
 
-/* ================= ROOT (LIGHT MODE DEFAULT) ================= */
+/* ================= ROOT ================= */
 
 :root {
-  /* ===== Accent ===== */
   --accent: #166534;
   --accent-dark: #14532d;
 
-  /* ===== Background ===== */
   --bg-main: #ffffff;
   --bg-soft: #f0fdf4;
 
-  /* ===== Neutral Palette ===== */
   --black: 15, 23, 42;
   --gray: 71, 85, 105;
   --gray-light: 226, 232, 240;
   --gray-dark: 30, 41, 59;
 
-  /* ===== Border ===== */
   --border-color: 226, 232, 240;
 
-  /* ===== Shadow ===== */
   --box-shadow:
     0 2px 6px rgba(22, 101, 52, 0.1), 0 8px 24px rgba(22, 101, 52, 0.1);
 }
 
 /* ================= DARK MODE ================= */
 
-@media (prefers-color-scheme: dark) {
-  :root.dark {
-    --accent: #22c55e;
-    --accent-dark: #16a34a;
+:root.dark {
+  --accent: #22c55e;
+  --accent-dark: #16a34a;
 
-    --bg-main: #0f172a;
-    --bg-soft: #1e293b;
+  --bg-main: #0f172a;
+  --bg-soft: #1e293b;
 
-    --black: 248, 250, 252;
-    --gray: 148, 163, 184;
-    --gray-light: 30, 41, 59;
-    --gray-dark: 226, 232, 240;
+  --black: 248, 250, 252;
+  --gray: 148, 163, 184;
+  --gray-light: 30, 41, 59;
+  --gray-dark: 226, 232, 240;
 
-    --border-color: 51, 65, 85;
+  --border-color: 51, 65, 85;
 
-    --box-shadow:
-      0 2px 6px rgba(34, 197, 94, 0.15), 0 8px 24px rgba(34, 197, 94, 0.15);
-  }
+  --box-shadow:
+    0 2px 6px rgba(34, 197, 94, 0.15), 0 8px 24px rgba(34, 197, 94, 0.15);
 }
 
 /* ================= FONTS ================= */
@@ -70,7 +63,6 @@
 body {
   font-family: "Atkinson", sans-serif;
   margin: 0;
-  padding: 0;
   background: var(--bg-main);
   color: rgb(var(--gray-dark));
   font-size: 20px;
@@ -80,46 +72,30 @@ body {
     color 0.3s ease;
 }
 
-/* ================= LAYOUT ================= */
+/* ================= LAYOUT SYSTEM ================= */
 
-main {
-  max-width: 760px;
-  width: 100%;
-  margin: auto;
-  padding: 3rem 1.5rem;
-}
-
-/* ================= WIDE CONTAINER (HOMEPAGE) ================= */
+/* Global container used everywhere */
 
 .container {
   width: min(1000px, 100% - 2rem);
   margin-inline: auto;
 }
 
-/* ================= GRID FIX ================= */
+/* Blog content width */
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.3rem;
+main {
+  width: min(760px, 100% - 2rem);
+  margin-inline: auto;
+  padding: 3rem 0;
 }
 
-@media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
+/* Homepage container override */
+
+main.container {
+  width: min(1000px, 100% - 2rem);
 }
 
-article {
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-
-article img {
-  margin: 2rem 0;
-}
-
-/* ================= HEADINGS ================= */
+/* ================= TYPOGRAPHY ================= */
 
 h1,
 h2,
@@ -127,7 +103,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.5rem;
   color: rgb(var(--black));
   line-height: 1.2;
 }
@@ -148,14 +124,33 @@ h5 {
   font-size: 1.25em;
 }
 
-/* ================= TEXT ================= */
-
 p {
   margin-bottom: 1em;
 }
 
-.prose p {
-  margin-bottom: 2em;
+/* ================= ARTICLE ================= */
+
+article {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+article p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+article li {
+  text-align: justify;
+}
+
+article ul,
+article ol {
+  padding-left: 1.2rem;
+}
+
+article img {
+  margin: 2rem 0;
 }
 
 /* ================= LINKS ================= */
@@ -183,7 +178,7 @@ img {
 
 code {
   padding: 2px 6px;
-  background-color: rgb(var(--gray-light));
+  background: rgb(var(--gray-light));
   border-radius: 4px;
   font-size: 0.9em;
 }
@@ -206,7 +201,7 @@ blockquote {
   border-left: 4px solid var(--accent);
   padding-left: 20px;
   margin: 1.5em 0;
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: rgb(var(--gray));
 }
 
@@ -232,6 +227,14 @@ table td {
   text-align: left;
 }
 
+/* ================= GRID ================= */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.3rem;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 720px) {
@@ -240,7 +243,11 @@ table td {
   }
 
   main {
-    padding: 1.5em;
+    padding: 2rem 0;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -253,21 +260,4 @@ table td {
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
-}
-
-/* ===== Global Typography ===== */
-
-article p {
-  text-align: justify;
-  line-height: 1.75;
-  hyphens: auto;
-}
-
-article li {
-  text-align: justify;
-}
-
-article ul,
-article ol {
-  padding-left: 1.2rem;
 }
