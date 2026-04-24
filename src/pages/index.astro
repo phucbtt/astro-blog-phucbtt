@@ -292,6 +292,8 @@ const educationItems: EducationItem[] = [
     max-width: 62ch;
     margin: 0;
     color: rgb(var(--gray));
+    text-align: justify;
+    hyphens: auto;
   }
 
   .hero-highlights {
@@ -344,6 +346,7 @@ const educationItems: EducationItem[] = [
     padding: 0.85rem 1.5rem;
     border-radius: 999px;
     font-weight: 700;
+    box-sizing: border-box;
     transition:
       transform 0.2s ease,
       box-shadow 0.2s ease,
@@ -634,11 +637,13 @@ const educationItems: EducationItem[] = [
 
     .cta {
       flex-direction: column;
+      width: 100%;
     }
 
     .primary-btn,
     .secondary-btn {
       width: 100%;
+      max-width: 100%;
     }
   }
 </style>
