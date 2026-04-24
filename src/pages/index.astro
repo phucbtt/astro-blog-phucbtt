@@ -4,12 +4,6 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
-type ContactItem = {
-  href: string;
-  label: string;
-  value: string;
-};
-
 type ExperienceItem = {
   company: string;
   location: string;
@@ -21,24 +15,6 @@ type EducationItem = {
   degree: string;
   period: string;
 };
-
-const contactItems: ContactItem[] = [
-  {
-    href: "mailto:bt.thanhphuc@gmail.com",
-    label: "Email",
-    value: "bt.thanhphuc@gmail.com",
-  },
-  {
-    href: "https://www.linkedin.com/in/bttp/",
-    label: "LinkedIn",
-    value: "linkedin.com/in/bttp",
-  },
-  {
-    href: "https://phucbtt.com/",
-    label: "Website",
-    value: "phucbtt.com",
-  },
-];
 
 const experienceItems: ExperienceItem[] = [
   {
@@ -150,19 +126,6 @@ const educationItems: EducationItem[] = [
         <div class="cta">
           <a href="/about" class="primary-btn">About Me</a>
           <a href="/blog" class="secondary-btn">Read Blog</a>
-        </div>
-      </section>
-
-      <section class="contact">
-        <h2>Contact</h2>
-
-        <div class="contact-grid">
-          {contactItems.map((item: ContactItem) => (
-            <a href={item.href} class="contact-card" target="_blank" rel="noreferrer">
-              <span class="contact-label">{item.label}</span>
-              <strong>{item.value}</strong>
-            </a>
-          ))}
         </div>
       </section>
 
@@ -288,7 +251,6 @@ const educationItems: EducationItem[] = [
     font-weight: 600;
   }
 
-  .contact-grid,
   .experience-list,
   .education-list {
     display: grid;
@@ -296,11 +258,6 @@ const educationItems: EducationItem[] = [
     margin-top: 1.5rem;
   }
 
-  .contact-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-
-  .contact-card,
   .job,
   .cert-card,
   .edu-item {
@@ -308,22 +265,6 @@ const educationItems: EducationItem[] = [
     border-radius: 12px;
     border-left: 4px solid var(--accent);
     padding: 1.25rem 1.4rem;
-  }
-
-  .contact-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    border: 1px solid rgb(var(--border-color));
-    border-left: 4px solid var(--accent);
-    background: var(--bg-soft);
-  }
-
-  .contact-label {
-    color: rgb(var(--gray));
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
   }
 
   .company,
@@ -365,8 +306,7 @@ const educationItems: EducationItem[] = [
       border-color 0.25s ease;
   }
 
-  .skill-card:hover,
-  .contact-card:hover {
+  .skill-card:hover {
     transform: translateY(-4px);
     border-color: var(--accent);
     box-shadow: var(--box-shadow);
