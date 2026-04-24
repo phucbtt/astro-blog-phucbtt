@@ -1,8 +1,97 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
+type ContactItem = {
+  href: string;
+  label: string;
+  value: string;
+};
+
+type ExperienceItem = {
+  company: string;
+  location: string;
+  roles: string[];
+};
+
+type EducationItem = {
+  school: string;
+  degree: string;
+  period: string;
+};
+
+const contactItems: ContactItem[] = [
+  {
+    href: "mailto:bt.thanhphuc@gmail.com",
+    label: "Email",
+    value: "bt.thanhphuc@gmail.com",
+  },
+  {
+    href: "https://www.linkedin.com/in/bttp/",
+    label: "LinkedIn",
+    value: "www.linkedin.com/in/bttp",
+  },
+  {
+    href: "https://phucbtt.com/",
+    label: "Website",
+    value: "phucbtt.com",
+  },
+];
+
+const experienceItems: ExperienceItem[] = [
+  {
+    company: "JOYBIT",
+    location: "Phường Yên Hòa",
+    roles: ["IT Helpdesk · March 2026 - Present"],
+  },
+  {
+    company: "(주)에이아이웍스",
+    location: "Hoàng Mai district",
+    roles: [
+      "Data Annotator · March 2026 - Present",
+      "Data Annotation/Labelling · August 2024 - February 2025",
+    ],
+  },
+  {
+    company: "SanAn Corporation Vietnam",
+    location: "Quận Cầu Giấy",
+    roles: [
+      "IT Helpdesk · March 2026 - Present",
+      "Information Technology Infrastructure Engineer · January 2026 - March 2026",
+      "IT Helpdesk · February 2025 - February 2026",
+    ],
+  },
+  {
+    company: "Cao đẳng Công thương Việt Nam",
+    location: "Hanoi, Vietnam",
+    roles: ["Information Technology Technical Support · February 2024 - July 2024"],
+  },
+];
+
+const skillItems: string[] = [
+  "IT Helpdesk",
+  "System Administration",
+  "IT Infrastructure",
+  "Technical Support",
+  "Quality Assurance",
+  "n8n",
+  "GitLab",
+];
+
+const educationItems: EducationItem[] = [
+  {
+    school: "Đại học Công nghệ Giao thông Vận tải",
+    degree: "Cử nhân, Công nghệ thông tin",
+    period: "September 2025",
+  },
+  {
+    school: "Cao đẳng Công thương Việt Nam",
+    degree: "Cao đẳng, Computer Science",
+    period: "2021 - 2023",
+  },
+];
 ---
 
 <!doctype html>
@@ -15,7 +104,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <Header />
 
     <main class="container">
-      <!-- HERO -->
       <section class="hero">
         <img src="/avatar.jpg" alt="Phuc Bui" class="avatar" />
 
@@ -23,11 +111,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
           <a
             href="https://github.com/phucbtt"
             target="_blank"
+            rel="noreferrer"
             aria-label="GitHub"
           >
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path
-                d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.76.4-1.27.73-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.3 1.19-3.11-.12-.3-.52-1.52.11-3.17 0 0 .97-.31 3.18 1.19a11.07 11.07 0 012.9-.39 11.1 11.1 0 012.9.39c2.2-1.5 3.17-1.19 3.17-1.19.64 1.65.24 2.87.12 3.17.74.81 1.19 1.85 1.19 3.11 0 4.43-2.69 5.4-5.26 5.69.41.35.77 1.04.77 2.1 0 1.52-.01 2.75-.01 3.12 0 .3.21.66.8.55A11.51 11.51 0 0023.5 12 C23.5 5.65 18.35.5 12 .5z"
+                d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.76.4-1.27.73-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.3 1.19-3.11-.12-.3-.52-1.52.11-3.17 0 0 .97-.31 3.18 1.19a11.07 11.07 0 012.9-.39 11.1 11.1 0 012.9.39c2.2-1.5 3.17-1.19 3.17-1.19.64 1.65.24 2.87.12 3.17.74.81 1.19 1.85 1.19 3.11 0 4.43-2.69 5.4-5.26 5.69.41.35.77 1.04.77 2.1 0 1.52-.01 2.75-.01 3.12 0 .3.21.66.8.55A11.51 11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"
               ></path>
             </svg>
           </a>
@@ -35,27 +124,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
           <a
             href="https://www.linkedin.com/in/bttp/"
             target="_blank"
+            rel="noreferrer"
             aria-label="LinkedIn"
           >
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path
-                d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6S0 4.88 0 3.5 1.12 1 2.49 1s2.49 1.12 2.49 2.5zM.22 8.5h4.54V24H.22V8.5zM8.29 8.5h4.35v2.11h.06c.61-1.16 2.11-2.39 4.34-2.39 4.64 0 5.5 3.05 5.5 7.02V24h-4.54v-7.64c0-1.82-.03-4.16-2.54-4.16 -2.55 0-2.94 1.99-2.94 4.03V24H8.29V8.5z"
+                d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6S0 4.88 0 3.5 1.12 1 2.49 1s2.49 1.12 2.49 2.5zM.22 8.5h4.54V24H.22V8.5zM8.29 8.5h4.35v2.11h.06c.61-1.16 2.11-2.39 4.34-2.39 4.64 0 5.5 3.05 5.5 7.02V24h-4.54v-7.64c0-1.82-.03-4.16-2.54-4.16-2.55 0-2.94 1.99-2.94 4.03V24H8.29V8.5z"
               ></path>
             </svg>
           </a>
         </div>
 
+        <p class="eyebrow">Nam Từ Liêm, Hanoi, Vietnam</p>
         <h1>Phuc Bui</h1>
 
-        <p class="subtitle">
-          IT Helpdesk | IT Infrastructure | Technical Support
-        </p>
+        <p class="subtitle">DevOps Engineer | System Admin | IT Helpdesk | IT Infra</p>
 
         <p class="intro">
-          IT professional based in Hanoi with hands-on experience in helpdesk
-          support, infrastructure operations, and system troubleshooting.
-          Focused on maintaining stable IT environments and improving
-          operational efficiency.
+          IT professional working across helpdesk operations, infrastructure support,
+          and system administration. Experienced in end-user support, internal IT
+          operations, and practical delivery across fast-moving environments.
         </p>
 
         <div class="cta">
@@ -64,73 +152,59 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         </div>
       </section>
 
-      <!-- EXPERIENCE -->
-      <section class="experience">
-        <h2>Professional Experience</h2>
+      <section class="contact">
+        <h2>Contact</h2>
 
-        <div class="job">
-          <h3>IT Infrastructure Engineer</h3>
-          <p class="company">SanAn Corporation Vietnam · Jan 2026 – Mar 2026</p>
-          <p>
-            Supported IT infrastructure operations, system monitoring, and
-            ensured stability across internal technical environments.
-          </p>
-        </div>
-
-        <div class="job">
-          <h3>IT Helpdesk | Technical Support</h3>
-          <p class="company">SanAn Corporation Vietnam · Feb 2025 – Feb 2026</p>
-          <p>
-            Provided technical support for end users, resolved hardware and
-            software issues, managed user accounts, and maintained system
-            reliability.
-          </p>
-        </div>
-
-        <div class="job">
-          <h3>IT Technical Support</h3>
-          <p class="company">
-            Vietnam College of Industry and Commerce · Feb 2024 – Jul 2024
-          </p>
-          <p>
-            Handled on-site technical support, device configuration, and network
-            troubleshooting within educational environments.
-          </p>
+        <div class="contact-grid">
+          {contactItems.map((item: ContactItem) => (
+            <a href={item.href} class="contact-card" target="_blank" rel="noreferrer">
+              <span class="contact-label">{item.label}</span>
+              <strong>{item.value}</strong>
+            </a>
+          ))}
         </div>
       </section>
 
-      <!-- SKILLS -->
+      <section class="experience">
+        <h2>Professional Experience</h2>
+
+        <div class="experience-list">
+          {experienceItems.map((item: ExperienceItem) => (
+            <article class="job">
+              <h3>{item.company}</h3>
+              <p class="company">{item.location}</p>
+              <ul class="role-list">
+                {item.roles.map((role: string) => <li>{role}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section class="skills">
         <h2>Core Skills</h2>
 
         <div class="skills-grid">
-          <div class="skill-card">System Monitoring</div>
-          <div class="skill-card">Technical Troubleshooting</div>
-          <div class="skill-card">Linux</div>
-          <div class="skill-card">Windows Administration</div>
-          <div class="skill-card">User & Access Management</div>
-          <div class="skill-card">Networking Fundamentals</div>
+          {skillItems.map((skill: string) => <div class="skill-card">{skill}</div>)}
         </div>
       </section>
 
-      <!-- CERTIFICATION -->
       <section class="certification">
         <h2>Certification</h2>
-        <p class="cert-card">OCNA – Omada Certified Network Administrator</p>
+        <p class="cert-card">OCNA - Omada Certified Network Administrator</p>
       </section>
 
-      <!-- EDUCATION -->
       <section class="education">
         <h2>Education</h2>
 
-        <div class="edu-item">
-          Bachelor of Information Technology – University of Transport
-          Technology (2025)
-        </div>
-
-        <div class="edu-item">
-          Associate Degree in Computer Science – Vietnam College of Industry and
-          Commerce (2021–2023)
+        <div class="education-list">
+          {educationItems.map((item: EducationItem) => (
+            <article class="edu-item">
+              <h3>{item.school}</h3>
+              <p>{item.degree}</p>
+              <p class="edu-period">{item.period}</p>
+            </article>
+          ))}
         </div>
       </section>
     </main>
@@ -140,20 +214,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 </html>
 
 <style>
-  /* ===== CONTAINER ===== */
-
   .container {
     max-width: 1000px;
     margin: auto;
   }
 
-  /* ===== SECTION SPACING ===== */
-
   section {
     margin-top: 4rem;
   }
-
-  /* ===== HERO ===== */
 
   .hero {
     text-align: center;
@@ -167,6 +235,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     border: 4px solid var(--accent);
     box-shadow: var(--box-shadow);
     margin-bottom: 1.4rem;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.4rem;
+    color: rgb(var(--gray));
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .hero h1 {
@@ -187,8 +263,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     color: rgb(var(--gray));
     margin-bottom: 2rem;
   }
-
-  /* ===== CTA ===== */
 
   .cta {
     display: flex;
@@ -213,22 +287,58 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     font-weight: 600;
   }
 
-  /* ===== EXPERIENCE ===== */
-
-  .job {
+  .contact-grid,
+  .experience-list,
+  .education-list {
+    display: grid;
+    gap: 1.25rem;
     margin-top: 1.5rem;
-    padding: 1.4rem;
-    border-left: 4px solid var(--accent);
-    background: rgb(var(--gray-light));
-    border-radius: 12px;
   }
 
-  .company {
+  .contact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .contact-card,
+  .job,
+  .cert-card,
+  .edu-item {
+    background: rgb(var(--gray-light));
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    padding: 1.25rem 1.4rem;
+  }
+
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    border: 1px solid rgb(var(--border-color));
+    border-left: 4px solid var(--accent);
+    background: var(--bg-soft);
+  }
+
+  .contact-label {
+    color: rgb(var(--gray));
     font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .company,
+  .edu-period {
+    font-size: 0.95rem;
     color: rgb(var(--gray));
   }
 
-  /* ================= SKILLS ================= */
+  .role-list {
+    margin: 0.75rem 0 0;
+    padding-left: 1.2rem;
+  }
+
+  .role-list li + li {
+    margin-top: 0.55rem;
+  }
 
   .skills-grid {
     display: grid;
@@ -241,51 +351,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     background: var(--bg-soft);
     padding: 1.4rem 1.2rem;
     border-radius: 14px;
-
     font-weight: 600;
     text-align: center;
-
     border: 1px solid rgb(var(--border-color));
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     min-height: 80px;
-
     transition:
       transform 0.25s ease,
       box-shadow 0.25s ease,
       border-color 0.25s ease;
   }
 
-  .skill-card:hover {
+  .skill-card:hover,
+  .contact-card:hover {
     transform: translateY(-4px);
     border-color: var(--accent);
     box-shadow: var(--box-shadow);
   }
-
-  /* ===== CERTIFICATION ===== */
-
-  .cert-card {
-    margin-top: 1rem;
-    padding: 1.2rem;
-    background: rgb(var(--gray-light));
-    border-left: 4px solid var(--accent);
-    border-radius: 10px;
-  }
-
-  /* ===== EDUCATION ===== */
-
-  .edu-item {
-    margin-top: 1rem;
-    padding: 1rem 1.2rem;
-    background: rgb(var(--gray-light));
-    border-radius: 10px;
-    border-left: 3px solid var(--accent);
-  }
-
-  /* ===== SOCIAL ===== */
 
   .social {
     display: flex;
@@ -308,8 +392,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     width: 20px;
     height: 20px;
   }
-
-  /* ===== MOBILE ===== */
 
   @media (max-width: 768px) {
     section {
