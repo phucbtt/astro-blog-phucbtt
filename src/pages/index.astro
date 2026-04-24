@@ -238,13 +238,14 @@ const educationItems: EducationItem[] = [
     display: grid;
     grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
     gap: 2rem;
-    align-items: center;
+    align-items: start;
     padding: 2rem;
   }
 
   .hero-media {
     display: grid;
     justify-items: center;
+    align-content: start;
     gap: 1.25rem;
   }
 
@@ -439,11 +440,21 @@ const educationItems: EducationItem[] = [
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     gap: 1.5rem;
+    align-items: start;
+  }
+
+  .split-layout > div {
+    min-width: 0;
   }
 
   .cert-card p,
   .edu-card p {
     margin: 0;
+  }
+
+  .cert-card {
+    height: auto;
+    min-height: 0;
   }
 
   .edu-card .edu-period {
@@ -476,6 +487,55 @@ const educationItems: EducationItem[] = [
   .portfolio-page article {
     max-width: none;
     margin: 0;
+  }
+
+  :root.dark .hero-card,
+  :root.dark .section-block {
+    background:
+      linear-gradient(180deg, rgba(30, 41, 59, 0.92) 0%, rgba(15, 23, 42, 0.98) 100%);
+  }
+
+  :root.dark .highlight-card,
+  :root.dark .info-card {
+    background: rgba(15, 23, 42, 0.9);
+    border-color: rgb(var(--border-color));
+  }
+
+  :root.dark .skill-card {
+    background:
+      linear-gradient(180deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+    color: rgb(var(--black));
+  }
+
+  :root.dark .social a {
+    background: rgba(30, 41, 59, 0.95);
+    color: rgb(var(--black));
+  }
+
+  :root.dark .secondary-btn {
+    background: rgba(30, 41, 59, 0.65);
+    color: rgb(var(--black));
+    border-color: var(--accent);
+  }
+
+  :root.dark .primary-btn {
+    color: rgb(15, 23, 42);
+  }
+
+  :root.dark .highlight-label,
+  :root.dark .section-heading p,
+  :root.dark .company,
+  :root.dark .edu-period,
+  :root.dark .intro,
+  :root.dark .eyebrow {
+    color: rgb(var(--gray));
+  }
+
+  :root.dark .skill-card:hover,
+  :root.dark .social a:hover,
+  :root.dark .secondary-btn:hover {
+    box-shadow: var(--box-shadow);
+    border-color: var(--accent);
   }
 
   @media (max-width: 900px) {
