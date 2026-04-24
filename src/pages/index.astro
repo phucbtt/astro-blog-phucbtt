@@ -369,11 +369,16 @@ const educationItems: EducationItem[] = [
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1rem;
+    align-items: stretch;
   }
 
   .info-card {
+    width: 100%;
+    max-width: none;
+    margin: 0;
     padding: 1.25rem;
     height: 100%;
+    box-sizing: border-box;
   }
 
   .card-head {
@@ -466,6 +471,11 @@ const educationItems: EducationItem[] = [
   .social svg {
     width: 20px;
     height: 20px;
+  }
+
+  .portfolio-page article {
+    max-width: none;
+    margin: 0;
   }
 
   @media (max-width: 900px) {
